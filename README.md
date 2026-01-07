@@ -1,24 +1,6 @@
-# Part 3: Data Quality Report
+# FlexiMart Data Architecture Project
 
 ## Overview
-This section provides a summary of data quality checks performed after ETL and cleaning.
+This repository contains the implementation of the FlexiMart Data Architecture assignment. It demonstrates the design and execution of an ETL pipeline, data cleaning, and data quality reporting using Python, SQLite, and Google Colab.
 
-## Report Details
-- **Duplicates Removed**
-  - Customers: 1
-  - Products: 0
-  - Sales: 2
-- **Missing Values Handled**
-  - Emails: 10
-  - Product descriptions: 5
-- **Final Record Counts**
-  - Customers: 26
-  - Products: 15
-  - Sales: 100
-
-## How to Generate Report
-- Run the final cell in Colab (`generate_report()` function).
-- Output saved in `data_quality_report.txt`.
-
-## Files in this Part
-- `data_quality_report.txt` – Summary of data quality checks
+## Project Structure
