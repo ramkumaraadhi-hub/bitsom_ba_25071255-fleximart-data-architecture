@@ -1,26 +1,20 @@
-# Part 1: Database ETL
+# Part 2: Data Cleaning
 
 ## Overview
-This section covers the Extract, Transform, and Load (ETL) process for the FlexiMart dataset. The goal is to load raw CSV files into a SQLite database and prepare them for analysis.
+This section focuses on cleaning and preparing data for analysis. The cleaning process ensures data consistency and accuracy.
 
-## Steps Implemented
-1. **Extract**
-   - Source files: `customers_raw.csv`, `products_raw.csv`, `sales_raw.csv`
-   - Loaded into Pandas DataFrames in Google Colab.
-
-2. **Transform**
-   - Removed duplicates.
-   - Handled missing values (e.g., missing emails replaced with placeholder).
-   - Standardized column names and data types.
-
-3. **Load**
-   - Created SQLite database: `fleximart.db`
-   - Tables: `customers`, `products`, `sales`
-   - Inserted cleaned data into respective tables.
+## Cleaning Steps
+- **Handle Missing Values**
+  - Missing emails replaced with `unknown@example.com`.
+  - Missing product descriptions filled with `Not Available`.
+- **Remove Duplicates**
+  - Exact duplicates removed from all tables.
+- **Data Type Standardization**
+  - Converted date columns to `YYYY-MM-DD`.
+  - Ensured numeric columns (price, quantity) are integers/floats.
 
 ## How to Run
-- Open `etl_pipeline.py` in Google Colab.
-- Ensure raw CSV files are in `/content/data/`.
-- Run:
-  ```bash
-  python3 etl_pipeline.py
+- Cleaning logic is integrated in `etl_pipeline.py`.
+- After running ETL, verify cleaned data in SQLite:
+  ```sql
+  SELECT * FROM customers WHERE email = 'unknown@example.com';
