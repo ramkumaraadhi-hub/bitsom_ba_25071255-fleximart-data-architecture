@@ -1,0 +1,21 @@
+FlexiMart Data Quality Report
+Generated: 2026-01-07 02:10:19
+
+Customers:
+  Records processed: 26
+  Exact duplicates removed: 1
+  Missing emails handled: 10
+  Final records loaded: 25
+
+Products:
+  Records processed: 20
+  Missing prices imputed: 3
+  Missing stock defaulted: 1
+  Final records loaded: 20
+
+Sales:
+  Records processed: 41
+  Duplicate transactions removed: 1
+  Rows dropped due to missing/invalid FKs or dates: 6
+  Orders loaded: 35
+  Order items loaded: 35
