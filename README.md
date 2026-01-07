@@ -1,20 +1,24 @@
-# Part 2: Data Cleaning
+# Part 3: Data Quality Report
 
 ## Overview
-This section focuses on cleaning and preparing data for analysis. The cleaning process ensures data consistency and accuracy.
+This section provides a summary of data quality checks performed after ETL and cleaning.
 
-## Cleaning Steps
-- **Handle Missing Values**
-  - Missing emails replaced with `unknown@example.com`.
-  - Missing product descriptions filled with `Not Available`.
-- **Remove Duplicates**
-  - Exact duplicates removed from all tables.
-- **Data Type Standardization**
-  - Converted date columns to `YYYY-MM-DD`.
-  - Ensured numeric columns (price, quantity) are integers/floats.
+## Report Details
+- **Duplicates Removed**
+  - Customers: 1
+  - Products: 0
+  - Sales: 2
+- **Missing Values Handled**
+  - Emails: 10
+  - Product descriptions: 5
+- **Final Record Counts**
+  - Customers: 26
+  - Products: 15
+  - Sales: 100
 
-## How to Run
-- Cleaning logic is integrated in `etl_pipeline.py`.
-- After running ETL, verify cleaned data in SQLite:
-  ```sql
-  SELECT * FROM customers WHERE email = 'unknown@example.com';
+## How to Generate Report
+- Run the final cell in Colab (`generate_report()` function).
+- Output saved in `data_quality_report.txt`.
+
+## Files in this Part
+- `data_quality_report.txt` – Summary of data quality checks
